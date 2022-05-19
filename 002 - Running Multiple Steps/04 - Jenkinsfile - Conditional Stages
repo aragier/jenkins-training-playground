@@ -13,7 +13,7 @@ pipeline {
     	stage('build'){
 	
 		when {
-                	STAGE 'build'
+                	environment name: 'STAGE', value: 'build'
             	}
 		steps{
 			echo build
@@ -23,7 +23,7 @@ pipeline {
 	stage('test'){
 	
 		when {
-                	STAGE 'test'
+                	environment name: 'STAGE', value: 'test'
             	}
 		steps{
 			echo test
