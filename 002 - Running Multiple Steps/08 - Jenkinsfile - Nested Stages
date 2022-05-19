@@ -3,7 +3,7 @@ pipeline {
     agent none
     
     stages {
-	stage{
+	stage('Nested Stages'){
 		stage('mvn') {
 		    agent {
 			docker {
