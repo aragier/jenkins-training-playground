@@ -16,6 +16,7 @@ pipeline {
 	stage('showDate'){
 		steps{
 		  sh 'date'
+		  sh 'echo hellow'
 		}
 	}
     }
