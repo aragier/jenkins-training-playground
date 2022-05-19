@@ -6,7 +6,7 @@ pipeline {
 	}
 	
     parameters {
-	    { choice(name: 'STAGE', choices: ['build', 'test'], description: '') }
+	   choice(name: 'STAGE', choices: ['build', 'test'], description: '')
 	}
     stages {
     
