@@ -8,7 +8,7 @@ pipeline {
     	stage('showbefore'){
 		steps{
 			input {
-			message: 'please enter name'
+			message: "please enter name"
 			parameters {
 				string(name: 'NAME', defaultValue '', description '')
 			}
@@ -19,7 +19,7 @@ pipeline {
         stage('build') {
             steps {
 	    		input {
-			message: 'please enter age'
+			message: "please enter age"
 			parameters {
 				string(name: 'AGE', defaultValue '', description '')
 			}
