@@ -3,7 +3,7 @@ pipeline {
     agent none
     
     stages {
-	stage('Nested Stages'){
+	stage('Parallel Stages'){
 		parallel{
 			stage('mvn') {
 			    agent {
