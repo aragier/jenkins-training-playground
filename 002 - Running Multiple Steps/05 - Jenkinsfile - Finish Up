@@ -1,14 +1,26 @@
 pipeline {
-    agent { 
-		docker { 
-			image 'alpine:latest' 
+	agent {
+		docker {
+			image 'alpine:latest'
 		}
 	}
-    stages {
-        stage('build') {
-            steps {
-                sh "exit \$((RANDOM % 2))"
-            }
-        }
-    }
+	stages {
+		stage('build') {
+			steps {
+				sh 'echo "Fail!"; exit 0'
+			}
+		}
+	}
+	post {
+		always {
+			echo 'This will always run'
+		}
+		success {
+			echo 'This will run only if successful'
+		}
+		failure {
+			echo 'This will run only if failed'
+		}
+
+	}
 }
