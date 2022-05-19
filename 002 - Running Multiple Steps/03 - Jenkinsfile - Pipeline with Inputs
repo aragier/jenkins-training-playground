@@ -1,30 +1,29 @@
 pipeline {
     agent { 
-		docker { 
-			image 'alpine:latest' 
-		}
-	}
+        docker { 
+            image 'alpine:latest' 
+        }
+    }
     stages {
-    	stage('showbefore'){
-		steps{
-			input {
-			message: "please enter name"
-			parameters {
-				string(name: 'NAME', defaultValue '', description '')
-			}
-			}
-			
-		}
-	}
         stage('build') {
-            steps {
-	    		input {
-			message: "please enter age"
-			parameters {
-				string(name: 'AGE', defaultValue '', description '')
-			}
-			}
+        input {
+                message "Please enter the name"
+                parameters {
+                    string(name: 'NAME', defaultValue: '', description: '')
+                }
+            }
+            steps {  
                 echo "$NAME"
+            }
+        }
+    stage('build2') {
+        input {
+        message "Please enter the age"
+                parameters {
+                    string(name: 'AGE', defaultValue: '', description: '')
+                }
+            }
+            steps {               
                 echo "$AGE"
             }
         }
