@@ -16,7 +16,7 @@ pipeline {
                 	environment name: 'STAGE', value: 'build'
             	}
 		steps{
-			echo build
+			echo 'build'
 		}
 	}
 	
@@ -26,7 +26,7 @@ pipeline {
                 	environment name: 'STAGE', value: 'test'
             	}
 		steps{
-			echo test
+			echo 'test'
 		}
 	}
     }
