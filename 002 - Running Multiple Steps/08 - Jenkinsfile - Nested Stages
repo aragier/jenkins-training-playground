@@ -4,26 +4,28 @@ pipeline {
     
     stages {
 	stage('Nested Stages'){
-		stage('mvn') {
-		    agent {
-			docker {
-			    image 'maven:3.3.3'
+		stages{
+			stage('mvn') {
+			    agent {
+				docker {
+				    image 'maven:3.3.3'
+				}
+			    }
+			    steps {
+				sh 'mvn --version'
+			    }
 			}
-		    }
-		    steps {
-			sh 'mvn --version'
-		    }
-		}
 
-		stage('npm') {
-		    agent {
-			docker {
-			    image 'node:6.3'
+			stage('npm') {
+			    agent {
+				docker {
+				    image 'node:6.3'
+				}
+			    }
+			    steps {
+				sh 'npm --version'
+			    }
 			}
-		    }
-		    steps {
-			sh 'npm --version'
-		    }
 		}
 	}
     }
