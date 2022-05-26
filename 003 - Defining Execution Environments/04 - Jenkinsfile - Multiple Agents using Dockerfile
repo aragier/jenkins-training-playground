@@ -1,24 +1,22 @@
 pipeline {
-
     agent none
-    
     stages {
-
         stage('mvn') {
             agent {
-                docker {
-                    image 'maven:3.3.3'
+                dockerfile {
+                    filename '04 - Dockerfile - Install Software Dockerfile Maven'
+                    dir '003 - Defining Execution Environments'
                 }
             }
             steps {
                 sh 'mvn --version'
             }
         }
-
         stage('npm') {
             agent {
-                docker {
-                    image 'node:6.3'
+                dockerfile {
+                    filename '04 - Dockerfile - Install Software Dockerfile Node'
+                    dir '003 - Defining Execution Environments'
                 }
             }
             steps {
