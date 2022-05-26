@@ -1,1 +1,1 @@
-FROM node6:3
+FROM node:6.3
