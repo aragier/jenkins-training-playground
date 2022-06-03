@@ -12,4 +12,11 @@
 			<version>5.5.2</version>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+	    <repository>
+	      <id>internal.repo</id>
+	      <name>MyCo Internal Repository</name>
+	      <url>http://3.124.164.63:8082/</url>
+	    </repository>
+  	</distributionManagement>
 </project>
