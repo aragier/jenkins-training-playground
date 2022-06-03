@@ -5,12 +5,20 @@ pipeline {
         }
     }
     stages {
-        stage('tests') {
+        stage('build') {
         steps {
             configFileProvider(
                 [configFile(fileId: 'settings.xml',
                     targetLocation: 'settings.xml')]) {
                 sh 'mvn -s settings.xml -f "005 - Recording Test Results and Artifacts/04 - Jenkinsfile - Publish in Nexus" clean install'
+            }
+        }
+        
+        stage('deploy to nexus'){
+        
+            steps{
+                
+                
             }
         }
         }
